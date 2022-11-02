@@ -1,0 +1,988 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #242424;
+}
+
+body {
+    background-color: rgb(18, 118, 155);
+
+}
+
+/*ШРИФТЫ*/
+
+@font-face {
+    font-family: 'DIN Pro';
+    font-weight: normal;
+    font-style: normal;
+    src: local('DIN Pro'), local('DINPro'),
+        url('fonts/DINPro/DINPro.woff2') format('woff2'),
+        url('fonts/DINPro/DINPro.woff') format('woff'),
+        url('fonts/DINPro/DINPro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DIN Pro';
+    font-weight: bold;
+    font-style: normal;
+    src: local('DIN Pro Bold'), local('DINPro-Bold'),
+        url('fonts/DINPro/DINPro-Bold.woff2') format('woff2'),
+        url('fonts/DINPro/DINPro-Bold.woff') format('woff'),
+        url('fonts/DINPro/DINPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Gilroy Regular'), local('Gilroy-Regular'),
+        url('fonts/Gilroy/Gilroy-Regular.woff2') format('woff2'),
+        url('fonts/Gilroy/Gilroy-Regular.woff') format('woff'),
+        url('fonts/Gilroy/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-weight: 300;
+    font-style: normal;
+    src: local('Gilroy Light'), local('Gilroy-Light'),
+        url('fonts/Gilroy/Gilroy-Light.woff2') format('woff2'),
+        url('fonts/Gilroy/Gilroy-Light.woff') format('woff'),
+        url('fonts/Gilroy/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-weight: 800;
+    font-style: normal;
+    src: local('Gilroy Extrabold'), local('Gilroy-Extrabold'),
+        url('fonts/Gilroy/Gilroy-Extrabold.woff2') format('woff2'),
+        url('fonts/Gilroy/Gilroy-Extrabold.woff') format('woff'),
+        url('fonts/Gilroy/Gilroy-Extrabold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    font-weight: normal;
+    font-style: normal;
+    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'),
+        url('fonts/MyriadPro/MyriadPro-Regular.woff2') format('woff2'),
+        url('fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'),
+        url('fonts/MyriadPro/MyriadPro-Regular.ttf') format('truetype');
+}
+
+/*КЛАССЫ ШРИФТОВ*/
+
+.DINPro_reg {
+    font-family: 'DIN Pro';
+    font-weight: normal;
+}
+
+.DINPro_bold {
+    font-family: 'DIN Pro';
+    font-weight: bold;
+}
+
+.Gilroy_reg {
+    font-family: 'Gilroy';
+    font-weight: normal;
+    font-style: normal;
+    color:#8cc9e8;
+    line-height: 50px;
+}
+
+.Gilroy_light {
+    font-family: 'Gilroy';
+    font-weight: 300;
+    font-size: 110px;
+    line-height: 1.05em;
+}
+
+.Gilroy_bold {
+    font-family: 'Gilroy';
+    font-weight: 800;
+    line-height: 1.05em;
+}
+
+/*Классы слайдов*/
+
+#slides {
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    transition: margin-left 250ms;
+    margin-left: 0;
+
+}
+
+.wrapper .slide {
+    position: relative;
+    min-width: 1024px;
+    height: 768px;
+    background-size: cover;
+}
+
+.slide[name="S1"] {
+    background-image: url("img/bg1.png");
+}
+
+.slide[name="S2"] {
+    background-image: url("img/bg2.png");
+}
+
+.slide[name="S3"] {
+    background-image: url("img/bg3.png");
+}
+
+
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*ШАПКА и ФУТЕР*/
+
+.header {
+    position: absolute;
+    top: 25px;
+    left: 66px;
+    z-index: 1000;
+}
+
+.header img {
+    position: absolute;
+    width: 153px;
+    height: 25.5px;
+}
+
+.header nav {
+    position: absolute;
+    width: 45px;
+    height: 25.5px;
+}
+
+.footer {
+    position: absolute;
+    top: 743px;
+    left: 69.5px;
+    z-index: 98;
+    width: 57px;
+    height: 12px;
+}
+
+
+.footer img {
+    width: 57px;
+    height: 12px;
+}
+
+
+/*Первый слайд*/
+
+.hellow__title {
+    position: absolute;
+    font-size: 27.25px;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.05em;
+    left: 66px;
+    top: 164px;
+    transform: translateX(4.5%) scaleX(109%);
+}
+
+.main__title {
+    position: absolute;
+    text-align: left;
+    left: 65px;
+    top: 50%;
+    color: rgb(23, 23, 23);
+    transform: translate(3.4%, -50%) scaleX(106.8%);
+    z-index: 6;
+}
+
+.button {
+    position: absolute;
+    right: 109.5px;
+    bottom: 223.5px;
+    height: 80px;
+    width: 287px;
+    background-color: #f671a3;
+    border-radius: 40px;
+    font-size: 25px;
+    z-index: 1000;
+}
+
+.button label {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    position: absolute;
+    left: 85px;
+    font-size: 27px;
+    height: 100%;
+    transform: translateX(4%) scaleX(108%)
+}
+
+.black_circle {
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 20.5px;
+    height: 48px;
+    width: 48px;
+    border-radius: 25px;
+    background-color: #242424;
+    box-shadow: 2.5px 2.5px 5px white, -2.5px -2.5px 5px black;
+}
+
+.arrow_center {
+    initial-value: '123';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.arrow_head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+/* Изображения первого слайда */
+
+.images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.ball1_1 {
+    position: absolute;
+    left: 861.5px;
+    top: 200.5px;
+    width: 110.5px;
+    height: 113.5px;
+    z-index: 1000;
+
+    animation-name: ball1_1_move;
+    transform-origin: top left;
+    animation-duration: 30s;
+    animation-timing-function: cubic-bezier(0.5, 0.2, 0.5, 0.8);
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes ball1_1_move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: scale(0.8) translate(-50px, -25px) rotate(180deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.ball1_2 {
+    position: absolute;
+    left: 542px;
+    top: 641.5px;
+    width: 227.5px;
+    height: 224px;
+    z-index: 12;
+
+    animation-name: ball1_2_move;
+    animation-duration: 20s;
+    animation-timing-function: cubic-bezier(0.3, 0.1, 0.3, 0.9);
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes ball1_2_move {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.75) translate(-50px, -50px) rotate(15deg)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.stick_1_1 {
+    position: absolute;
+    left: -88.5px;
+    top: 72.5px;
+    width: 214px;
+    height: 115.5px;
+    z-index: 16;
+}
+
+.bakti_1_2 {
+    position: absolute;
+    left: 744.5px;
+    top: 61.5px;
+    width: 62.5px;
+    height: 57px;
+    z-index: 15;
+
+    animation-name: bakti_1_move;
+    animation-duration: 20s;
+    animation-timing-function: cubic-bezier(0.3, 0.1, 0.3, 0.9);
+    animation-iteration-count: infinite;
+}
+
+@keyframes bakti_1_move {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: translate(50px, 50px) rotate(5deg)
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.bakti1_1 {
+    position: absolute;
+    left: 22.5px;
+    top: 503.5px;
+    width: 73px;
+    height: 71px;
+    z-index: 4;
+
+    animation-name: bakti_1_move;
+    animation-duration: 20s;
+    animation-timing-function: cubic-bezier(0.3, 0.1, 0.3, 0.9);
+    animation-iteration-count: infinite;
+    animation-delay: -5s;
+}
+
+
+.spot_1_1 {
+    position: absolute;
+    left: 347.5px;
+    top: 631px;
+    width: 83.5px;
+    height: 77.5px;
+    z-index: 13;
+}
+
+
+.spot_1_2 {
+    position: absolute;
+    left: 917px;
+    top: 30px;
+    width: 71px;
+    height: 68.5px;
+    z-index: 14;
+}
+
+
+.sperm1_1 {
+    position: absolute;
+    left: 430.75px;
+    top: 155px;
+    width: 591.5px;
+    height: 92.5px;
+    z-index: 11;
+}
+
+.sperm1_2 {
+    position: absolute;
+    left: -134px;
+    top: 593px;
+    width: 413.5px;
+    height: 183px;
+    z-index: 3;
+}
+
+/*Второй слайд*/
+
+.message_head {
+    position: absolute;
+    font-size: 27.25px;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.2;
+    left: 66px;
+    top: 129px;
+    transform: translateX(4.5%) scaleX(109%);
+    z-index: 30;
+}
+
+.message_wrapper {
+    padding: 30px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5.446px 8.387px 232.5px 17.5px rgba(157, 185, 198, 0.39);
+    position: absolute;
+    left: 120px;
+    top: 240px;
+    width: 725px;
+    height: 385px;
+    z-index: 28;
+}
+
+.message_wrapper:before {
+    content: "";
+    z-index: 30;
+    position: absolute;
+    top: 25px;
+    bottom: 400px;
+    left: 30px;
+    right: 30px;
+    box-shadow: inset white 0px 15px 10px;
+}
+
+.message_wrapper:after {
+    content: "";
+    z-index: 30;
+    position: absolute;
+    top: 370px;
+    bottom: 15px;
+    left: 30px;
+    right: 30px;
+    box-shadow: inset white 0px -25px 25px;
+}
+
+.message_text {
+    position: absolute;
+    width: 725px;
+    height: 385px;
+    z-index: 29;
+    font-size: 28px;
+    overflow: hidden;
+}
+
+.slider {
+    background-color: black;
+    position: absolute;
+    left: 78.5px;
+    top: 252.5px;
+    width: 5.5px;
+    height: 431.5px;
+    z-index: 32;
+    border-radius: 5.5px;
+}
+
+.thumb {
+    width: 20px;
+    height: 100px;
+    border-radius: 20px;
+    position: relative;
+    left: -7.25px;
+    top: 0px;
+    background: #f671a3;
+    cursor: pointer;
+    box-shadow: inset 1.25px 2.5px 5px black, inset -1.25px -2.5px 5px white;
+}
+
+/* ИЗОБРАЖЕНИЯ ВТОРОГО СЛАЙДА */
+
+.sperm_2_1,
+.sperm_2_2,
+.sperm_2_3,
+.sperm_2_4,
+.sperm_2_5 {
+    position: absolute;
+    z-index: 23;
+    transform-origin: top left;
+
+    animation-name: none;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.8, 0.1, 0.3, 0.9);
+    animation-iteration-count: 1;
+}
+
+.animate {
+    animation-name: sperm_move;
+}
+
+
+@keyframes sperm_move {
+    0% {
+        opacity: 0;
+        transform: translate(200px, 115px);
+    }
+    100% {transform: rotate(0deg)}
+}
+
+.sperm_2_1 {    
+    left: 366.5px;
+    top: 98.5px;
+    width: 850px;
+    height: 440px;
+    opacity: 1;
+}
+  
+
+.sperm_2_2 {    
+    left: 584.5px;
+    top: 97px;
+    width: 530px;
+    height: 280px;
+    opacity: 0.6;
+}
+
+.sperm_2_3 {    
+    left: 710px;
+    top: 74px;
+    width: 340px;
+    height: 180px;
+    opacity: 0.5;
+}
+
+.sperm_2_4 {    
+    left: 889.5px;
+    top: 411px;
+    width: 530px;
+    height: 280px;
+    opacity: 0.5;
+}
+
+.sperm_2_5 {    
+    left: 885.5px;
+    top: 514px;
+    width: 340px;
+    height: 180px;
+    opacity: 0.35;
+}
+
+
+
+/* Третий слайд */
+
+.title_3_message {
+    font-size: 27px;
+    font-family: "DIN Pro";
+    color: rgb(36, 36, 36);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 352px;
+    top: 162.5px;
+    z-index: 55;
+    transform: translateX(4.5%) scaleX(109%);
+}
+
+.title_3_brand {
+    font-size: 95px;
+    font-family: "Gilroy";
+    color: rgb(36, 36, 36);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 345px;
+    top: 195.5px;
+    z-index: 56;
+    transform: translateX(8.5%) scaleX(117%);
+}
+
+.message_wrapper_3_1 {
+    border-radius: 40px;
+    padding: 40px;
+    padding-left: 70px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5.446px 8.387px 232.5px 17.5px rgba(157, 185, 198, 0.39);
+    position: absolute;
+    left: 280px;
+    top: 380px;
+    width: 260px;
+    height: 180px;
+    z-index: 34;
+    font-size: 25px;
+}
+
+.message_wrapper_3_1:before {
+    content: "";
+    background-image: url("img/icon_3_4.png");
+    background-size: contain;
+    position: absolute;
+    top: -35px;
+    left: 70px;
+    height: 63px;
+    width: 67.5px;
+}
+
+.message_wrapper_3_2 {
+    border-radius: 40px;
+    padding: 40px;
+    padding-right: 80px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5.446px 8.387px 232.5px 17.5px rgba(157, 185, 198, 0.39);
+    position: absolute;
+    left: 681px;
+    top: 379px;
+    width: 143px;
+    height: 70px;
+    z-index: 38;
+    font-size: 25px;
+    z-index: 35;
+}
+
+.message_wrapper_3_2:before {
+    content: "";
+    background-image: url("img/icon_3_5.png");
+    background-size: contain;
+    position: absolute;
+    top: -35px;
+    left: 40px;
+    height: 57.5px;
+    width: 70px;
+}
+
+.button_3_1 {
+    position: absolute;
+    right: 80px;
+    bottom: 123px;
+    height: 80px;
+    width: 263px;
+    background-color: #f671a3;
+    border-radius: 40px;
+    font-size: 25px;
+    z-index: 32;
+}
+
+.button_3_1 label {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    position: absolute;
+    left: 85px;
+    font-size: 27px;
+    height: 100%;
+    transform: translateX(4%) scaleX(108%)
+}
+
+.plus_horizontal {
+    initial-value: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.plus_vertical {
+    initial-value: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 15px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.message_wrapper_3_3 {
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 140.5px;
+    top: 123px;
+
+    padding-left: 210px;
+    padding-top: 210px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+
+    width: 512.5px;
+    height: 263px;
+    
+    z-index: 41;
+    font-size: 25px;
+
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.page{
+    position: absolute;
+    max-width: 512px;
+    
+    animation-name: disappear;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {}
+}
+
+@keyframes disappear {
+    0% {}
+    50% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.fog_of_war {
+    background-color: rgb(22, 39, 62);
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 40;
+
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.remove-button {
+    position: absolute;
+    font-size: 30px;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    display: block;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+  
+.navigation {
+    height: 50px;
+}
+
+.radio_input {
+    display: none;
+}
+
+.radio_label {
+    display: inline-block;
+    margin: 3px;
+    margin-top: 300px;
+    height: 10px;
+    width: 10px;
+    left: 60px;
+    bottom: 0px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 1px;
+    background-color: white;
+    border-color: black;
+    z-index: 93;
+    transition: all .5s ease;
+}
+
+#ri1:checked ~ #rl1 {
+    background-color: rgb(252, 109, 169);
+    border-color: rgb(187, 83, 126);
+}
+
+#ri2:checked ~ #rl2 {
+    background-color: rgb(252, 109, 169);
+    border-color: rgb(187, 83, 126);
+}
+
+#ri1:checked ~ #page1 {
+    animation-name: appear;
+}
+
+#ri2:checked ~ #page2 {
+    animation-name: appear;
+}
+  
+
+/* Изображения третьего слайда */
+
+.tube_3_1 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 282.5px;
+    height: 688.5px;
+    z-index: 54;
+}
+
+
+.bubble_3_1 {
+    opacity: 0.878;
+    position: absolute;
+    left: 77px;
+    top: 212.5px;
+    width: 34px;
+    height: 34px;
+    z-index: 47;
+
+    animation-name: bubble_move_1;
+    animation-delay: -1s;
+}
+
+.bubble_3_2 {
+    opacity: 0.929;
+    position: absolute;
+    left: 186.5px;
+    top: 317px;
+    width: 112.5px;
+    height: 112px;
+    z-index: 46;
+    
+    animation-name: bubble_move_1;
+    animation-delay: -2s;
+}
+
+.bubble_3_3 {
+    opacity: 0.929;
+    position: absolute;
+    left: 197.5px;
+    top: 61.5px;
+    width: 37px;
+    height: 35.5px;
+    z-index: 45;
+    
+    animation-name: bubble_move_2;
+    animation-delay: -3s;
+}
+
+
+.bubble_3_4 {
+    opacity: 0.929;
+    position: absolute;
+    left: 242px;
+    top: 591px;
+    width: 61.5px;
+    height: 61.5px;
+    z-index: 44;
+    
+    animation-name: bubble_move_2;
+    animation-delay: -4s;
+}
+
+.bubble_3_5 {
+    opacity: 0.929;
+    position: absolute;
+    left: 184px;
+    top: 155.5px;
+    width: 68px;
+    height: 69px;
+    z-index: 53;
+    
+    animation-name: bubble_move_3;
+    animation-delay: -5s;
+}
+
+.bubble_3_6 {
+    opacity: 0.929;
+    position: absolute;
+    left: 183.5px;
+    top: 703px;
+    width: 142.5px;
+    height: 142.5px;
+    z-index: 52;
+    
+    animation-name: bubble_move_3;
+    animation-delay: -6s;
+}
+
+.bubble_3_7 {
+    opacity: 0.929;
+    position: absolute;
+    left: 10.5px;
+    top: 453.5px;
+    width: 33px;
+    height: 33px;
+    z-index: 51;
+    
+    animation-name: bubble_move_4;
+    animation-delay: -7s;
+}
+
+.bubble_3_8 {
+    opacity: 0.929;
+    position: absolute;
+    left: 25px;
+    top: 553.5px;
+    width: 74.5px;
+    height: 74.5px;
+    z-index: 50;
+    
+    animation-name: bubble_move_4;
+    animation-delay: -8s;
+}
+
+.bubble_3_1,
+.bubble_3_2,
+.bubble_3_3,
+.bubble_3_4,
+.bubble_3_5,
+.bubble_3_6,
+.bubble_3_7,
+.bubble_3_8 {
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0.5, 0.2, 0.5, 0.8);
+    animation-iteration-count: infinite;
+}
+
+@keyframes bubble_move_1 {
+    0% {}
+    50% {transform: translate(50px, 50px) scale(1.25);}
+    100% {}
+}
+
+@keyframes bubble_move_2 {
+    0% {}
+    50% {transform: translate(-50px, 50px) scale(1.25);}
+    100% {}
+}
+@keyframes bubble_move_3 {
+    0% {}
+    50% {transform: translate(50px, -50px) scale(1.25);}
+    100% {}
+}
+@keyframes bubble_move_4 {
+    0% {}
+    50% {transform: translate(-50px, 25px) scale(1.25);}
+    100% {}
+}

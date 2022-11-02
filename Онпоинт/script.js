@@ -82,7 +82,7 @@ function TouchStart(e) {
     };
 
     /* Если начали на слайдере, то отменяем свайп */
-    if (e.target.closest("#thumb")) {swipeLock = true; console.log(1)}
+    if (e.target.closest("#thumb")) {swipeLock = true;}
     else {swipeLock = false}
     
     /* КНОПКА "ДОМОЙ" */
@@ -147,8 +147,6 @@ function CheckAction()
     /* ПОВЕДЕНИЕ СЛАЙДЕРА */
  
     thumb.ontouchstart = function(event) {
-
-      event.preventDefault();
 
       let shiftY = event.changedTouches[0].clientY - thumb.getBoundingClientRect().top;
 
